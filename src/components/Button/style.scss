@@ -1,0 +1,27 @@
+@import "../../index.scss";
+
+.button {
+  width: 100px;
+  height: 40px;
+  color: $white;
+  font-weight: $medium;
+  font-size: $normal;
+  border: none;
+  border-radius: $border-radius-small;
+  cursor: pointer;
+}
+
+.active {
+  background-color: $primary-color;
+}
+
+.active:active {
+  background-color: $primary-color;
+  box-shadow: inset 5px 5px 10px -3px $box-shadow;
+  transform: translateY(3px);
+}
+
+.disabled {
+  background-color: $secondary-color;
+  pointer-events: none;
+}

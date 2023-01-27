@@ -1,0 +1,16 @@
+@import "../../index.scss";
+
+.wizard {
+  margin: 70px auto;
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-radius: $border-radius-big;
+  box-shadow: 7px 7px 15px $secondary-color;
+}

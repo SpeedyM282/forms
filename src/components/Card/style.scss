@@ -1,0 +1,35 @@
+@import '../../index.scss';
+
+.card {
+  width: 150px;
+  height: 270px;
+  padding: 20px 0 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid $primary-color;
+  border-radius: $border-radius-big;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: none;
+  box-shadow: 3px 3px 10px $primary-color;
+}
+
+.card__heading,
+.card__cost {
+  margin: 0;
+  font-weight: $medium;
+}
+
+.card__text {
+  color: $secondary-color;
+  font-size: $normal;
+}
+
+.bold {
+  color: black;
+  font-weight: $bold;
+}

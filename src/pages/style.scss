@@ -1,0 +1,30 @@
+.block__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block__inputs__step-3-4 {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.block__inputs__step-5 {}
+
+.block__buttons {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block__buttons__step-1 {
+  justify-content: center;
+}
+
+.block__cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

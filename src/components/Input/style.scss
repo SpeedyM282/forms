@@ -1,0 +1,40 @@
+@import "../../index.scss";
+
+.form__label {
+  font-weight: $medium;
+  font-size: $normal;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form__input--card-num {
+  width: 210px !important;
+  font-size: $large;
+}
+
+.form__input {
+  width: 200px;
+  height: 35px;
+  padding-left: 7px;
+  font-family: 'Ubuntu', sans-serif;
+  color: $secondary-color;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius-small;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__checkbox--wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form__checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
