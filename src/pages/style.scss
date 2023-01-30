@@ -1,3 +1,7 @@
+.steps--heading {
+  margin: 0;
+}
+
 .block__inputs {
   display: flex;
   flex-direction: column;
@@ -11,7 +15,12 @@
   flex-wrap: wrap;
 }
 
-.block__inputs__step-5 {}
+.block__personal-data-info,
+.block__credit-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .block__buttons {
   width: 95%;

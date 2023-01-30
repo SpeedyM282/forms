@@ -1,10 +1,10 @@
-import Step5 from '../../pages/Step5';
+import Step6 from '../../pages/Step6';
 import './style.scss';
 
 function Wizard() {
   return (
     <div className="wizard">
-      <Step5 />
+      <Step6 />
     </div>
   );
 }

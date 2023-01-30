@@ -6,9 +6,9 @@ import '../style.scss';
 function Step5() {
   return (
     <>
-      <div className='block__inputs block__inputs__step-5' >
-        <Input label='Username' type='text' status='disable' />
-        <Input label='Email' type='email' status='disable' />
+      <div className='block__inputs' >
+        <Input label='Username' type='text' status='disabled' />
+        <Input label='Email' type='email' status='disabled' />
         <Checkbox label='By checking it I confirm my personal data processing' />
         <Checkbox label='I accept all cookies' />
       </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Checkbox from '../Checkbox';
 import './style.scss';
 
 function Input({ label, type, min, status }) {
@@ -40,18 +41,13 @@ function Input({ label, type, min, status }) {
               type={type === 'password' ? passwordType : type}
               min={min}
               autoComplete="new-password"
+              disabled={status === 'disabled'}
               required
             />
         }
         {
           type === 'password' &&
-          <div className='form__checkbox--wrapper'>
-            <input
-              className='form__checkbox'
-              type="checkbox"
-              onClick={togglePassword}
-            />Show Password
-          </div>
+          <Checkbox label='Show Password' onClick={togglePassword} />
         }
       </label>
     </>
