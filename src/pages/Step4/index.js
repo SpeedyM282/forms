@@ -1,3 +1,5 @@
+import React from 'react';
+import { Outlet, Link } from "react-router-dom";
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import '../style.scss';
@@ -17,9 +19,14 @@ function Step4() {
         />
       </div>
       <div className='block__buttons' >
-        <Button txt='Previous' buttonState='active' />
-        <Button txt='Next' buttonState='active' />
+        <Link to='/step-3' >
+          <Button txt='Previous' buttonState='active' />
+        </Link>
+        <Link to='/step-5' >
+          <Button txt='Next' buttonState='active' />
+        </Link>
       </div>
+      <Outlet />
     </>
   );
 }

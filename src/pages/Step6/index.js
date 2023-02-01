@@ -1,7 +1,7 @@
+import React from 'react';
+import { Outlet, Link } from "react-router-dom";
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-// import Checkbox from '../../components/Checkbox';
-import Radio from '../../components/Radio';
 import '../style.scss';
 
 function Step6() {
@@ -29,9 +29,14 @@ function Step6() {
         </div>
       </div>
       <div className='block__buttons' >
-        <Button txt='Previous' buttonState='active' />
-        <Button txt='Submit' buttonState='active' />
+        <Link to='/step-5' >
+          <Button txt='Previous' buttonState='active' />
+        </Link>
+        <Link to='/' >
+          <Button txt='Submit' buttonState='active' />
+        </Link>
       </div>
+      <Outlet />
     </>
   );
 }

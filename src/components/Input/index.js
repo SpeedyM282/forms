@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import Checkbox from '../Checkbox';
 import './style.scss';

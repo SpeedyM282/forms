@@ -1,19 +1,16 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Button from '../../components/Button';
-import Input from '../../components/Input';
 import '../style.scss';
 
-function Step1() {
+function Intro() {
   return (
     <>
       <div className='block__inputs' >
-        <Input label='Username' type='text' />
-        <Input label='Password' type='password' />
-        <Input label='Confirm Password' type='password' />
+        <h1>Click Next Button</h1>
       </div>
       <div className='block__buttons block__buttons__step-1' >
-        <Link to='/step-2' >
+        <Link to='/step-1' >
           <Button txt='Next' buttonState='active' />
         </Link>
       </div>
@@ -22,4 +19,4 @@ function Step1() {
   );
 }
 
-export default Step1;
+export default Intro;
