@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-function Card({ heading, cost, period }) {
+function Card({ heading, cost, period, onClick, status }) {
   return (
-    <div className="card" >
+    <div className={`card ${status ? 'clicked' : ''}`} onClick={() => { onClick(heading) }} >
       <h2 className='card__heading' >{heading}</h2>
       <div className='card__text__wrapper' >
         <p className={`card__text bold`} >Some text here</p>
