@@ -7,16 +7,25 @@ function ContextProvider({ children }) {
   const [userData, setUserData] = useState(userDataObjGenerator());
   const [subscription, setSubscription] = useState('');
   const [cardInfo, setCardInfo] = useState(cardInfoObjGenerator());
+  const [ageConfirm, setAgeConfirm] = useState(false);
 
   const updateUserData = updateState(setUserData);
-  const updateSubscription = updateState(setSubscription);
   const updateCardInfo = updateState(setCardInfo);
+
+  function updateSubscription(type) {
+    setSubscription(type);
+  }
+
+  function updateAgeConfirm() {
+    setAgeConfirm(prev => !prev);
+  }
 
   return (
     <Context.Provider
       value={{
-        userData, subscription, cardInfo,
-        updateUserData, updateSubscription, updateCardInfo
+        userData, subscription, cardInfo, ageConfirm,
+        updateUserData, updateSubscription, updateCardInfo,
+        updateAgeConfirm
       }}
     >
       {children}
