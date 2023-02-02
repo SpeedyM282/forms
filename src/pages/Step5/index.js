@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Input from '../../components/Inputs/Input';
 import Checkbox from '../../components/Checkbox';
 import '../style.scss';
 

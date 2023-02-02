@@ -1,7 +1,8 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Button from '../../components/Button';
-import Input from '../../components/Input';
+import Input from '../../components/Inputs/Input';
+import CardNumInput from '../../components/Inputs/CardNumInput';
 import '../style.scss';
 
 function Step4() {
@@ -11,7 +12,7 @@ function Step4() {
     <>
       <div className='block__inputs block__inputs__step-3-4' >
         <Input label='Owner Name' type='text' />
-        <Input label='Card Number' type='text' />
+        <CardNumInput label='Card Number' type='text' />
         <Input
           label='Expiration Date'
           type='month'

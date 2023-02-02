@@ -8,11 +8,11 @@
   font-size: $normal;
   border: none;
   border-radius: $border-radius-small;
-  cursor: pointer;
 }
 
 .active {
   background-color: $primary-color;
+  cursor: pointer;
 }
 
 .active:active {
@@ -23,5 +23,6 @@
 
 .disabled {
   background-color: $secondary-color;
+  cursor: not-allowed !important;
   pointer-events: none;
 }

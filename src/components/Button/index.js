@@ -4,7 +4,7 @@ import './style.scss';
 function Button({ txt, buttonState }) {
   return (
     <>
-      <button className={`button ${buttonState}`}>{txt}</button>
+      <button className={`button ${buttonState ? 'active' : 'disabled'}`}>{txt}</button>
     </>
   )
 }
