@@ -7,7 +7,7 @@ import '../style.scss';
 
 function Step1() {
   const [buttonState, setButtonState] = useState(false);
-  const { userData, updateUserData } = useContext(Context)
+  const { userData, updateUserData } = useContext(Context);
   const { username, password, confirmPassword } = userData;
 
   useEffect(() => {
