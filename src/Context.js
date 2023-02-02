@@ -1,34 +1,27 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react";
+import { userDataObjGenerator, cardInfoObjGenerator, updateState } from './utils';
 
 const Context = React.createContext();
 
 function ContextProvider({ children }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [userData, setUserData] = useState(userDataObjGenerator());
   const [subscription, setSubscription] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [birthdate, setBirthdate] = useState('');
-  const [email, setEmail] = useState('');
-  const [gender, setGender] = useState(null);
-  const [cardOwnerName, setCardOwnerName] = useState('');
-  const [cardNumber, setCardNumber] = useState('');
-  const [cardExpDate, setCardExpDate] = useState('');
+  const [cardInfo, setCardInfo] = useState(cardInfoObjGenerator());
+
+  const updateUserData = updateState(setUserData);
+  const updateSubscription = updateState(setSubscription);
+  const updateCardInfo = updateState(setCardInfo);
 
   return (
     <Context.Provider
       value={{
-        username, password,
-        subscription, firstName,
-        lastName, birthdate,
-        email, gender,
-        cardOwnerName, cardNumber,
-        cardExpDate
+        userData, subscription, cardInfo,
+        updateUserData, updateSubscription, updateCardInfo
       }}
     >
       {children}
     </Context.Provider>
-  )
+  );
 }
 
-export { ContextProvider, Context }
+export { ContextProvider, Context };
