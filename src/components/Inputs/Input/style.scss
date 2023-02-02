@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../../index.scss";
 
 .form__label {
   width: 220px;
@@ -7,11 +7,6 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
-}
-
-.form__input--card-num {
-  width: 210px !important;
-  font-size: $large;
 }
 
 .form__input {
