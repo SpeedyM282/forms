@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import Checkbox from '../../Checkbox';
 import './style.scss';
 
-function Input({ label, type, min, status, value, onChange, field }) {
+function Input({ label, type, min, max, status, value, onChange, field }) {
   const [passwordType, setPasswordType] = useState('password');
 
   function togglePassword() {
@@ -23,6 +23,7 @@ function Input({ label, type, min, status, value, onChange, field }) {
           onChange={(e) => onChange(field, e.target.value)}
           type={type === 'password' ? passwordType : type}
           min={min}
+          max={max}
           autoComplete="new-password"
           disabled={status === 'disabled'}
           required
