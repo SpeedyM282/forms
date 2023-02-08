@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import { Context } from '../../Context';
-import { YEAR, MONTH, DATE } from '../../utils';
+import { YEAR, MONTH, DATE, USER_LOCAL_STORAGE, linkStyle } from '../../utils';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import Checkbox from '../../components/Checkbox';
@@ -18,13 +18,22 @@ function Step3() {
     return re.test(String(email).toLowerCase());
   }
 
+  function handleClick() {
+    USER_LOCAL_STORAGE.userInfo.firstName = firstName;
+    USER_LOCAL_STORAGE.userInfo.lastName = lastName;
+    USER_LOCAL_STORAGE.userInfo.birthDate = birthDate;
+    USER_LOCAL_STORAGE.userInfo.email = email;
+    USER_LOCAL_STORAGE.userInfo.gender = gender;
+    localStorage.setItem('user', JSON.stringify(USER_LOCAL_STORAGE));
+  }
+
   useEffect(() => {
     if (firstName && lastName && birthDate && validateEmail(email) && (gender !== null) && ageConfirm) {
       setButtonState(true);
     } else {
       setButtonState(false);
     }
-  }, [firstName, lastName, birthDate, email, gender, ageConfirm])
+  }, [firstName, lastName, birthDate, email, gender, ageConfirm]);
 
   return (
     <>
@@ -68,8 +77,8 @@ function Step3() {
         <Link to='/step-2'>
           <Button txt='Previous' buttonState='active' />
         </Link>
-        <Link to={buttonState ? '/step-4' : '#'} style={{ 'cursor': buttonState ? 'pointer' : 'not-allowed' }} >
-          <Button txt='Next' buttonState={buttonState} />
+        <Link to={linkStyle(buttonState, 4).link} style={linkStyle(buttonState).linkStyle} >
+          <Button txt='Next' buttonState={buttonState} onClick={handleClick} />
         </Link>
       </div>
       <Outlet />

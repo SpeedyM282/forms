@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { userDataObjGenerator, cardInfoObjGenerator, updateState } from './utils';
+import { createUserLocalStorage, updateState } from './utils';
 
 const Context = React.createContext();
+const user = createUserLocalStorage();
 
 function ContextProvider({ children }) {
-  const [userData, setUserData] = useState(userDataObjGenerator());
-  const [subscription, setSubscription] = useState('');
-  const [cardInfo, setCardInfo] = useState(cardInfoObjGenerator());
+  const [userData, setUserData] = useState(user.userInfo);
+  const [cardInfo, setCardInfo] = useState(user.cardInfo);
+  const [subscription, setSubscription] = useState(user.subscription);
   const [ageConfirm, setAgeConfirm] = useState(false);
 
   const updateUserData = updateState(setUserData);

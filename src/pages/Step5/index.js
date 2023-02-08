@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
+import { USER_LOCAL_STORAGE } from '../../utils';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import Checkbox from '../../components/Checkbox';
@@ -24,7 +25,6 @@ function Step5() {
     } else {
       setButtonState(false);
     }
-
   }, [personalDataProcessing, cookies]);
 
   return (
@@ -33,11 +33,13 @@ function Step5() {
         <Input
           label='Username'
           type='text'
+          value={USER_LOCAL_STORAGE.userInfo.username}
           status='disabled'
         />
         <Input
           label='Email'
           type='email'
+          value={USER_LOCAL_STORAGE.userInfo.email}
           status='disabled'
         />
         <Checkbox

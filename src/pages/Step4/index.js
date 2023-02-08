@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import { Context } from '../../Context';
-import { YEAR, MONTH } from '../../utils';
+import { YEAR, MONTH, USER_LOCAL_STORAGE, linkStyle } from '../../utils';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import CardNumInput from '../../components/Inputs/CardNumInput';
@@ -12,13 +12,20 @@ function Step4() {
   const { cardInfo, updateCardInfo } = useContext(Context);
   const { cardOwner, cardNumber, cardExpDate } = cardInfo;
 
+  function handleClick() {
+    USER_LOCAL_STORAGE.cardInfo.cardOwner = cardOwner;
+    USER_LOCAL_STORAGE.cardInfo.cardNumber = cardNumber;
+    USER_LOCAL_STORAGE.cardInfo.cardExpDate = cardExpDate;
+    localStorage.setItem('user', JSON.stringify(USER_LOCAL_STORAGE));
+  }
+
   useEffect(() => {
     if (cardOwner.length > 3 && cardNumber.length === 19 && cardExpDate) {
       setButtonState(true);
     } else {
       setButtonState(false);
     }
-  }, [cardOwner, cardNumber, cardExpDate])
+  }, [cardOwner, cardNumber, cardExpDate]);
 
   return (
     <>
@@ -49,8 +56,8 @@ function Step4() {
         <Link to='/step-3' >
           <Button txt='Previous' buttonState='active' />
         </Link>
-        <Link to={buttonState ? '/step-5' : '#'} style={{ 'cursor': buttonState ? 'pointer' : 'not-allowed' }} >
-          <Button txt='Next' buttonState={buttonState} />
+        <Link to={linkStyle(buttonState, 5).link} style={linkStyle(buttonState).linkStyle} >
+          <Button txt='Next' buttonState={buttonState} onClick={handleClick} />
         </Link>
       </div>
       <Outlet />
